@@ -4,7 +4,10 @@ import axios from "axios";
 import MessageList from "./MessageList";
 import "./chat.css";
 
-const socket = io("https://real-time-chat-application-backend.vercel.app");
+const socket = io("https://real-time-chat-application-backend.vercel.app", {
+  transports: ["websocket", "polling"], // ✅ Fallback to polling if WebSockets fail
+});
+
 
 export const Chat = ({ user }) => {
   const [users, setUsers] = useState([]);
