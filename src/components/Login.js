@@ -8,7 +8,7 @@ const Login = ({ setUser }) => {
   const handleLogin = async () => {
     try {
       const { data } = await axios.post(
-        "https://real-time-chat-application-backend.vercel.app/auth/login",
+        "https://realtime-chatapplication-backend.onrender.com/auth/login",
         {
           username,
           password,

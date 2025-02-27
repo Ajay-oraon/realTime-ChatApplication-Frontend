@@ -4,7 +4,7 @@ import axios from "axios";
 import MessageList from "./MessageList";
 import "./chat.css";
 
-const socket = io("https://real-time-chat-application-backend.vercel.app", {
+const socket = io("https://realtime-chatapplication-backend.onrender.com", {
   transports: ["polling"], // ✅ Fallback to polling if WebSockets fail
 });
 
@@ -19,7 +19,7 @@ export const Chat = ({ user }) => {
     const fetchUsers = async () => {
       try {
         const { data } = await axios.get(
-          "https://real-time-chat-application-backend.vercel.app/users",
+          "https://realtime-chatapplication-backend.onrender.com/users",
           {
             params: { currentUser: user.username },
           }
@@ -47,7 +47,7 @@ export const Chat = ({ user }) => {
   const fetchMessages = async (receiver) => {
     try {
       const { data } = await axios.get(
-        "https://real-time-chat-application-backend.vercel.app/messages",
+        "https://realtime-chatapplication-backend.onrender.com/messages",
         {
           params: { sender: user.username, receiver },
         }
